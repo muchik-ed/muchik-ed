@@ -16,7 +16,7 @@
                 @apply text-blue-800 dark:text-lime-400;
             }
             nav a {
-                @apply px-2 border-1 rounded-xl;
+                @apply px-2 border-1 rounded-xl text-gray-950 dark:text-gray-100;
             }
             .icon {
                 @apply inline w-6 h-6;
@@ -82,17 +82,20 @@
             <header class="my-10">
                 <form
                     id="form-search"
-                    class="border-1 border-gray-500 rounded-md flex gap-2 text-xl"
+                    class="md:border-1 border-gray-500 rounded-md md:flex text-center gap-2 text-xl"
                     action="javascript:void(0)"
                 >
-                    <a class="text-center font-bold text-xs p-2" href="./">
+                    <a
+                        class="block text-center font-bold text-xs p-2"
+                        href="./"
+                    >
                         <svg class="mx-auto h-10 w-10">
                             <use xlink:href="#icon-brand"></use>
                         </svg>
                         <span>Diccionario<br />Muchik</span>
                     </a>
                     <input
-                        class="m-2 py-2 px-3 border-1 border-gray-500 w-full"
+                        class="m-2 py-2 px-3 border-1 border-gray-500 md:w-full"
                         type="search"
                         name="q"
                         placeholder="Buscar"
@@ -100,21 +103,21 @@
                         required
                     />
                     <button
-                        class="py-5 px-3 border-l-1 border-gray-500 cursor-pointer"
+                        class="py-2 md:py-5 border-1 px-3 md:border-t-0 md:border-b-0 md:border-r-0 border-gray-500 cursor-pointer"
                     >
                         <svg class="icon">
                             <use xlink:href="#icon-search"></use>
                         </svg>
                     </button>
                 </form>
-                <nav class="flex gap-2 justify-center my-5">
+                <nav class="md:flex gap-2 text-center justify-center my-5">
                     <a href="./#">Portada</a>
                     <a href="./#/doc/README.md">Documentación</a>
                     <a href="./#/shared/main.html">Descargar</a>
                     <a href="./#/donate.html">Donar</a>
                 </nav>
             </header>
-            <section id="view"></section>
+            <section id="view" class="p-5"></section>
             <footer class="text-center py-20">&copy; 2025</footer>
         </main>
         <dialog

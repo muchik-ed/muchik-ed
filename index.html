@@ -1,48 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muchik - Diccionario Mochica</title>
-    <meta name="description" content="Diccionario de la lengua Mochica/Yunga del norte de Perú">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="./app/main.js"></script>
-    <style type="text/tailwindcss">
-        a {
-            @apply text-blue-800;
-        }
-        nav a {
-            @apply px-2 border-1 rounded-xl;
-        }
-        .icon {
-            @apply inline w-6 h-6;
-        }
-    </style>
-</head>
-<body class="bg-gray-100 text-gray-950">
-    <main class="mx-auto max-w-2xl">
-        <header class="my-10">
-            <form class="border-1 border-gray-500 rounded-md flex gap-2 text-xl" action="#">
-                <a class="text-center font-bold text-xs p-2" href="./">
-                    <svg class="h-10 w-10"><use xlink:href="#icon-brand"></use></svg>
-                    <span>Diccionario<br>Muchik</span>
-                </a>
-                <input class="m-2 py-2 px-3 border-1 border-gray-500 w-full" type="search" name="q" placeholder="Buscar">
-                <button class="py-5 px-3 border-l-1">
-                    <svg class="icon"><use xlink:href="#icon-search"></use></svg>
-                </button>
-            </form>
-            <nav class="flex gap-2 justify-center my-5">
-                <a href="/#">Portada</a>
-                <a href="/#/doc/">Documentación</a>
-                <a href="/#/shared/">Descargar</a>
-                <a href="/#/donate/">Donar</a>
-            </nav>
-        </header>
-        <section id="view"></section>
-        <footer class="text-center py-20">&copy; 2025</footer>
-    </main>
-    <dialog id="dialog"></dialog>
-    <svg style="display:none;"></svg>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Muchik - Diccionario Mochica</title>
+        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <meta
+            name="description"
+            content="Diccionario de la lengua Mochica/Yunga del norte de Perú"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <style type="text/tailwindcss">
+            a {
+                @apply text-blue-800;
+            }
+            nav a {
+                @apply px-2 border-1 rounded-xl;
+            }
+            .icon {
+                @apply inline w-6 h-6;
+            }
+            h1 {
+                @apply text-3xl font-bold pt-5;
+            }
+            h2 {
+                @apply text-2xl font-bold pt-5;
+            }
+            h3 {
+                @apply text-xl font-bold pt-5;
+            }
+            p {
+                @apply pb-5;
+            }
+            pre {
+                @apply my-5 text-balance;
+            }
+            blockquote {
+                @apply border-l-4 border-blue-800 pl-4 italic text-gray-500;
+                p {
+                    @apply p-0;
+                }
+            }
+            select {
+                @apply border-1 border-gray-500 rounded-sm p-2;
+            }
+            .button {
+                @apply border-1 rounded-sm p-2;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-100 text-gray-950">
+        <main class="mx-auto max-w-2xl">
+            <header class="my-10">
+                <form
+                    id="form-search"
+                    class="border-1 border-gray-500 rounded-md flex gap-2 text-xl"
+                    action="javascript:void(0)"
+                >
+                    <a class="text-center font-bold text-xs p-2" href="./">
+                        <svg class="mx-auto h-10 w-10">
+                            <use xlink:href="#icon-brand"></use>
+                        </svg>
+                        <span>Diccionario<br />Muchik</span>
+                    </a>
+                    <input
+                        class="m-2 py-2 px-3 border-1 border-gray-500 w-full"
+                        type="search"
+                        name="q"
+                        placeholder="Buscar"
+                        minlength="2"
+                        required
+                    />
+                    <button class="py-5 px-3 border-l-1 cursor-pointer">
+                        <svg class="icon">
+                            <use xlink:href="#icon-search"></use>
+                        </svg>
+                    </button>
+                </form>
+                <nav class="flex gap-2 justify-center my-5">
+                    <a href="/#">Portada</a>
+                    <a href="/#/doc/README.md">Documentación</a>
+                    <a href="/#/shared/main.html">Descargar</a>
+                    <a href="/#/donate.html">Donar</a>
+                </nav>
+            </header>
+            <section id="view"></section>
+            <footer class="text-center py-20">&copy; 2025</footer>
+        </main>
+        <dialog
+            id="dialog"
+            class="fixed max-w-3xl md:max-w-xl max-h-screen overflow-auto top-0 mx-auto my-5 p-5 bg-gray-100 border-1 rounded-md border-gray-500"
+        >
+            <button
+                class="border-1 border-gray-500 text-gray-500 rounded-md px-2 float-right"
+                onclick="this.parentNode.close()"
+            >
+                x
+            </button>
+            <section></section>
+        </dialog>
+        <script src="./app/main.js"></script>
+        <svg style="display: none">
+            <symbol id="icon-brand" fill="currentColor" viewBox="0 0 16 16">
+                <path
+                    d="M 8 0.5000003 A 7.5 7.5 0 0 0 0.5 8.0000003 L 3.0058594 8.0000003 L 3.0058594 10.498047
+            L 5.5019531 12.994141 L 8 12.994141 L 10.498047 12.994141 L 12.994141 10.498047 L 12.994141 8.0000003
+            L 15.5 8.0000003 A 7.5 7.5 0 0 0 8 0.5000003 z
+            M 5.5 8.0000003 A 1.5 1.5 0 0 1 7 9.5000003 A 1.5 1.5 0 0 1 5.5 11 A 1.5 1.5 0 0 1 4 9.5000003
+            A 1.5 1.5 0 0 1 5.5 8.0000003 z
+            M 10.5 8.0000003 A 1.5 1.5 0 0 1 12 9.5000003 A 1.5 1.5 0 0 1 10.5 11 A 1.5 1.5 0 0 1 9 9.5000003
+            A 1.5 1.5 0 0 1 10.5 8.0000003 z"
+                ></path>
+            </symbol>
+            <symbol id="icon-search" fill="currentColor" viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                />
+            </symbol>
+        </svg>
+    </body>
 </html>

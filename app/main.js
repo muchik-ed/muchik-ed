@@ -39,7 +39,7 @@ document.getElementById("form-search").addEventListener("submit", (event) => {
   results.forEach((x) => {
     const p = document.createElement("div");
     p.innerHTML = `
-      <h3><a href="/#/id/${dc(x.id)}">${dc(x.muchik)}</a></h3>
+      <h3><a href="./#/id/${dc(x.id)}">${dc(x.muchik)}</a></h3>
       <pre>${dc(x.spanish)}</pre>`;
     view.appendChild(p);
   });

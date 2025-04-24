@@ -5,20 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muchik - Diccionario Mochica</title>
     <meta name="description" content="Diccionario de la lengua Mochica/Yunga del norte de Perú">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="./app/main.js"></script>
+    <style type="text/tailwindcss">
+        a {
+            @apply text-blue-800;
+        }
+        nav a {
+            @apply px-2 border-1 rounded-xl;
+        }
+        .icon {
+            @apply inline w-6 h-6;
+        }
+    </style>
 </head>
-<body>
-    <main>
-        <header>
-            <form action="#">
-                <input type="search" name="q" placeholder="Buscar">
-                <button>Buscar</button>
+<body class="bg-gray-100 text-gray-950">
+    <main class="mx-auto max-w-2xl">
+        <header class="my-10">
+            <form class="border-1 border-gray-500 rounded-md flex gap-2 text-xl" action="#">
+                <a class="text-center font-bold text-xs p-2" href="./">
+                    <svg class="h-10 w-10"><use xlink:href="#icon-brand"></use></svg>
+                    <span>Diccionario<br>Muchik</span>
+                </a>
+                <input class="m-2 py-2 px-3 border-1 border-gray-500 w-full" type="search" name="q" placeholder="Buscar">
+                <button class="py-5 px-3 border-l-1">
+                    <svg class="icon"><use xlink:href="#icon-search"></use></svg>
+                </button>
             </form>
+            <nav class="flex gap-2 justify-center my-5">
+                <a href="/#">Portada</a>
+                <a href="/#/doc/">Documentación</a>
+                <a href="/#/shared/">Descargar</a>
+                <a href="/#/donate/">Donar</a>
+            </nav>
         </header>
-        <section></section>
-        <footer></footer>
+        <section id="view"></section>
+        <footer class="text-center py-20">&copy; 2025</footer>
     </main>
-    <aside></aside>
+    <dialog id="dialog"></dialog>
     <svg style="display:none;"></svg>
 </body>
 </html>

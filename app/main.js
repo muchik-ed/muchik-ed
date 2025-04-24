@@ -1,6 +1,6 @@
 let db = {}
 
-function loadTable(name) {console.log(name)
+function loadTable(name) {
     if (!localStorage.hasOwnProperty(name))
         fetch(`./data/${name}.data.json`)
             .then(x=>x.text())

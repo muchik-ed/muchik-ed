@@ -46,7 +46,7 @@ document.getElementById("form-search").addEventListener("submit", (event) => {
 });
 
 const onHashChange = async () => {
-  const uri = location.hash.slice(1) || "./app/home.html";
+  const uri = location.hash.slice(1) || "/app/home.html";
 
   if (uri.startsWith("/id/")) {
     const id = parseInt(uri.slice(4));

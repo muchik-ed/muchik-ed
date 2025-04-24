@@ -13,7 +13,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <style type="text/tailwindcss">
             a {
-                @apply text-blue-800;
+                @apply text-blue-800 dark:text-lime-400;
             }
             nav a {
                 @apply px-2 border-1 rounded-xl;
@@ -40,7 +40,7 @@
                 @apply my-5 text-balance;
             }
             blockquote {
-                @apply border-l-4 border-blue-800 pl-4 italic text-gray-500;
+                @apply border-l-4 border-blue-800 dark:border-lime-400 pl-4 italic;
                 p {
                     @apply p-0;
                 }
@@ -69,7 +69,7 @@
                 @apply border-t-1 border-b-1;
             }
             tbody tr {
-                @apply hover:text-blue-800;
+                @apply hover:text-blue-800 hover:dark:text-lime-400;
             }
             th,
             td {
@@ -77,7 +77,7 @@
             }
         </style>
     </head>
-    <body class="bg-gray-100 text-gray-950">
+    <body class="bg-gray-100 text-gray-950 dark:bg-gray-950 dark:text-gray-100">
         <main class="mx-auto max-w-2xl">
             <header class="my-10">
                 <form
@@ -99,7 +99,9 @@
                         minlength="2"
                         required
                     />
-                    <button class="py-5 px-3 border-l-1 cursor-pointer">
+                    <button
+                        class="py-5 px-3 border-l-1 border-gray-500 cursor-pointer"
+                    >
                         <svg class="icon">
                             <use xlink:href="#icon-search"></use>
                         </svg>
@@ -117,7 +119,7 @@
         </main>
         <dialog
             id="dialog"
-            class="fixed max-w-3xl md:max-w-xl max-h-screen overflow-auto top-0 mx-auto my-5 p-5 bg-gray-100 border-1 rounded-md border-gray-500"
+            class="fixed max-w-3xl md:max-w-xl max-h-screen overflow-auto top-0 mx-auto my-5 p-5 bg-gray-100 border-1 rounded-md border-gray-500 dark:bg-gray-950 dark:text-gray-100"
         >
             <button
                 class="border-1 border-gray-500 text-gray-500 rounded-md px-2 float-right"

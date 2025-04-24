@@ -63,9 +63,13 @@ const onHashChange = async () => {
     return;
   }
 
-  const req = await fetch(uri);
+  const req = await fetch("." + uri);
   if (req.status != 200) return;
-  const html = await req.text();
+  let html = await req.text();
+
+  if (uri.endsWith(".md")) {
+    html = marked.parse(html);
+  }
   document.getElementById("view").innerHTML = html;
 };
 
